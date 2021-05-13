@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version Versions.kotlin
-    kotlin("plugin.serialization") version Versions.kotlin
+    kotlin("jvm")
+    kotlin("plugin.serialization")
 
-    id("net.mamoe.mirai-console") version Versions.mirai
+    id("net.mamoe.mirai-console")
 }
 
 group = "xyz.cssxsh.mirai.plugin"
