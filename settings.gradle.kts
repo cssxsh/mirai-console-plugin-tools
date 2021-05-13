@@ -1,5 +1,6 @@
 pluginManagement {
-    repositories {    mavenLocal()
+    repositories {
+        mavenLocal()
         gradlePluginPortal()
         maven(url = "https://maven.aliyun.com/repository/releases")
         maven(url = "https://mirrors.huaweicloud.com/repository/maven")
