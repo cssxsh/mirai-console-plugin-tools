@@ -6,8 +6,7 @@ import net.mamoe.mirai.contact.Contact
 import net.mamoe.mirai.message.data.Message
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
 import net.mamoe.mirai.message.data.toPlainText
-import kotlin.time.ExperimentalTime
-import kotlin.time.minutes
+import kotlin.time.*
 
 val SendLimit = """本群每分钟只能发\d+条消息""".toRegex()
 
@@ -20,7 +19,7 @@ suspend fun <T : CommandSenderOnMessage<*>> T.sendMessage(block: suspend T.(Cont
     }.onFailure {
         when {
             SendLimit.containsMatchIn(it.message.orEmpty()) -> {
-                delay((1).minutes)
+                delay((1).toDuration(DurationUnit.MINUTES))
                 quoteReply(SendLimit.find(it.message!!)!!.value)
             }
             else -> {
