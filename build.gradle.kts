@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-
+    compileOnly(kotlin("stdlib"))
     testImplementation(junit("api", Versions.junit))
     testRuntimeOnly(junit("engine", Versions.junit))
 }
