@@ -9,7 +9,7 @@ import net.mamoe.mirai.message.data.toPlainText
 
 val SendLimit = """本群每分钟只能发\d+条消息""".toRegex()
 
-val SendDelay = 60 * 1000L
+const val SendDelay = 60 * 1000L
 
 suspend fun <T : CommandSenderOnMessage<*>> T.sendMessage(block: suspend T.(Contact) -> Message): Boolean {
     return runCatching {
